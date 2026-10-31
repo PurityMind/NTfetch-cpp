@@ -24,7 +24,7 @@ int main()
 	std::cout << std::string(title_len, '-') << '\n';
 
 	std::vector<std::string> os_info = {
-		"OS: " + sysinfo::get_os_name() + ", " + sysinfo::get_os_architecture(),
+		"OS: " + sysinfo::get_os_name() + " (" + sysinfo::get_os_architecture() + ")",
 		"OS Version: " + sysinfo::get_os_version(),
 		"CPU: " + sysinfo::get_cpu_info(),
 	};

@@ -80,7 +80,7 @@ namespace sysinfo
 		switch (os_info.dwMajorVersion)
 		{
 		case 10:
-			return "Windows 10/11";
+			return (os_info.dwBuildNumber >= 22000) ? "Windows 11" : "Windows 10";
 		case 6:
 			switch (os_info.dwMinorVersion)
 			{
