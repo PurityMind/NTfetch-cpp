@@ -12,5 +12,5 @@
 
 ## Building
 ```cmd
-cl /EHsc /std:c++17 /O2 main.cpp ntinfo.cpp /Fe:<any name that u want idk>.exe advapi32.lib
+cl /EHsc /std:c++17 /O2 ConsoleApplication1\main.cpp ConsoleApplication1\ntinfo.cpp /Fe:ntfetch.exe advapi32.lib
 ```
