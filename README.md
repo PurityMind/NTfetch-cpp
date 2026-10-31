@@ -9,6 +9,7 @@
 - Username & Hostname
 - OS Distribution, Build & Architecture
 - Kernel/NT Version
+- Uptime
 
 ## Building
 ```cmd

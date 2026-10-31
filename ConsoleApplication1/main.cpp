@@ -27,6 +27,7 @@ int main()
 		"OS: " + sysinfo::get_os_name() + " (" + sysinfo::get_os_architecture() + ")",
 		"OS Version: " + sysinfo::get_os_version(),
 		"CPU: " + sysinfo::get_cpu_info(),
+		"Uptime: " + sysinfo::get_uptime()
 	};
 
 	for (const auto& os : os_info)

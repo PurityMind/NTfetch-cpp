@@ -45,7 +45,7 @@ namespace sysinfo
 	[[nodiscard]] std::string get_username()
 	{
 		DWORD length = 0;
-		
+
 		GetUserNameA(nullptr, &length);
 		if (length == 0) return "unknown";
 
@@ -72,6 +72,37 @@ namespace sysinfo
 		}
 
 		return "unknown";
+	}
+
+	[[nodiscard]] std::string get_uptime()
+	{
+		const std::uint64_t total_seconds = GetTickCount64() / 1000;
+
+		const std::uint64_t days = total_seconds / 86400;
+		const std::uint64_t hours = (total_seconds % 86400) / 3600;
+		const std::uint64_t minutes = (total_seconds % 3600) / 60;
+		const std::uint64_t seconds = total_seconds % 60;
+
+		std::string uptime;
+
+		if (days > 0)
+		{
+			uptime += std::to_string(days) + "d ";
+		}
+
+		if (hours > 0 || days > 0)
+		{
+			uptime += std::to_string(hours) + "h ";
+		}
+
+		if (minutes > 0 || hours > 0 || days > 0)
+		{
+			uptime += std::to_string(minutes) + "m ";
+		}
+
+		uptime += std::to_string(seconds) + "s ";
+
+		return uptime;
 	}
 
 	[[nodiscard]] std::string get_os_name()
